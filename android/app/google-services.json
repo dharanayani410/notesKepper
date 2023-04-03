@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "456129542383",
+    "project_id": "noteskepper",
+    "storage_bucket": "noteskepper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456129542383:android:58a21db6372c42a848031a",
+        "android_client_info": {
+          "package_name": "com.note.notekepper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456129542383-8qqhl2l9a19blc8ojor7csq2p7n509uf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.note.notekepper",
+            "certificate_hash": "5e43427a1a9a6fd9b1482f88d143f4bcfe1c42d4"
+          }
+        },
+        {
+          "client_id": "456129542383-80h4629tuj98g684052jlmsavec2qt1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqrtQD7mI4BfoW8dTAESLEk4EiwrWjWPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456129542383-80h4629tuj98g684052jlmsavec2qt1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -71,6 +71,8 @@ class AuthHelper {
           .signInWithEmailAndPassword(email: email, password: password);
 
       User? user = userCredential.user;
+
+      res['user'] = user;
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
         case "wrong-password":

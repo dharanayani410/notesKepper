@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notekepper/helpers/authHelper.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wc_form_validators/wc_form_validators.dart';
 
 class SignUp extends StatefulWidget {
@@ -174,6 +175,9 @@ class _SignUpState extends State<SignUp> {
                               const SnackBar(content: Text("sign up failed")));
                         }
                       }
+                      SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                      await prefs.setBool('SignUpVisited', true);
                     },
                     style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(

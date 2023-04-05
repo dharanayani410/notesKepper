@@ -13,14 +13,40 @@ class StoreHelper {
     collectionReference = fireStore.collection("Notes");
   }
 
-  addNotes({required String title, required note}) async {
+  Future<void> addNotes({required String title, required des}) async {
+    print("in ");
     connectCollection();
     int id = DateTime.now().millisecondsSinceEpoch;
-
     await collectionReference!
         .doc(id.toString())
-        .set({'id': id, 'title': title, 'note': note})
+        .set({'id': id, 'title': title, 'des': des})
         .then((value) => print("Notes added.."))
         .catchError((error) => print("$error"));
+  }
+
+  Stream<QuerySnapshot<Object?>> getNotes() {
+    connectCollection();
+
+    return collectionReference!.snapshots();
+  }
+
+  editNotes({required String id, required Map<Object, Object> data}) async {
+    connectCollection();
+
+    collectionReference!
+        .doc(id)
+        .update(data)
+        .then((value) => print("Notes edited..."))
+        .catchError((error) => print(error));
+  }
+
+  deleteNotes({required String id}) async {
+    connectCollection();
+
+    collectionReference!
+        .doc(id)
+        .delete()
+        .then((value) => print("Note deleted.."))
+        .catchError((error) => print(error));
   }
 }

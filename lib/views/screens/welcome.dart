@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../helpers/authHelper.dart';
 
@@ -10,6 +11,18 @@ class WelCome extends StatefulWidget {
 }
 
 class _WelComeState extends State<WelCome> {
+  prefrences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    await prefs.setBool('welcome', true);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    prefrences();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

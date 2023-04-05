@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notekepper/helpers/authHelper.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({Key? key}) : super(key: key);
@@ -118,6 +119,9 @@ class _LogInState extends State<LogIn> {
                                   content: Text("logged in failed")));
                         }
                       }
+                      SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                      await prefs.setBool('LoggedInVisit', true);
                     },
                     style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
